@@ -1,13 +1,19 @@
 import React from 'react'
 import "./Favorite.css"
 
-const Favorite = ({faveSong}) => {
+const Favorite = (props) => {
+
+  const {faveSong, playlist} = props
+
+  const faveList = playlist.filter(song => song.favorite === true)
+
+  console.log('faveList', faveList)
 
   const loaded = () => (
     <div className='favorite-section'>
       <h2 className='favorite-header'>Favorite Songs List</h2>
       <div className='fave-container'>
-        {faveSong.map((tunr) => (
+        {faveList.map((tunr) => (
           <article>
             <h5>{tunr.song}</h5>
             <h5>{tunr.artist}</h5>
@@ -27,7 +33,7 @@ const Favorite = ({faveSong}) => {
   </div>
   )
 
-  return faveSong.length > 0 ? loaded() : loading()
+  return faveList.length > 0 ? loaded() : loading()
 }
 
 export default Favorite

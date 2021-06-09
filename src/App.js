@@ -6,7 +6,7 @@ import Playlist from './Playlist'
 
 function App() {
 
-  const url = "https://6rwmxhv336.execute-api.us-east-2.amazonaws.com/dev/"
+  const url = "https://6rwmxhv336.execute-api.us-east-2.amazonaws.com/dev/tunr/"
 
   const [playlist, setPlaylist] = useState([]);
 
@@ -19,16 +19,15 @@ function App() {
   const [faveSong, setFaveSong] = useState([])
 
   const getSongs = () => {
-    fetch(url + "tunr/")
+    fetch(url)
     .then((resp) => resp.json())
     .then((data) => {
       setPlaylist(data.body)
-      console.log(playlist)
     })
   }
 
   useEffect(() => getSongs(), [])
-  console.log(playlist)
+  // console.log(playlist)
 
   const addFaveSong = (song) => {
     setFaveSong([...faveSong, song])
@@ -45,16 +44,23 @@ function App() {
     .then(() => getSongs())
   }
 
-  // const handleFave = (newSong) => {
-  //   fetch(url, {
-  //     method: 'put',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(newSong)
-  //   })
-  //   .then(() => getSongs())
-  // }
+  const handleFave = (song) => {
+    fetch(url + song.tunrId, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(song)
+    })
+    .then(() => getSongs())
+  }
+
+  const handleDelete = (song) => {
+    fetch(url + song.tunrId, {
+      method: 'delete'
+    })
+    .then(() => getSongs())
+  }
 
 
   return (
@@ -62,9 +68,20 @@ function App() {
       <h1>TUNR.</h1>
       <h3 className="headline">FOR ALL YOUR PLAYLIST NEEDS</h3>
       <hr className="red-line"></hr>
-      <Playlist playlist={playlist}  addFaveSong={addFaveSong}/>
-      <Favorite faveSong={faveSong}/>
-      <Form song={emptySong} handleSubmit={handleSubmit}/>
+      <Playlist 
+        playlist={playlist}  
+        addFaveSong={addFaveSong}
+        handleFave={handleFave}
+        handleDelete={handleDelete}
+      />
+      <Favorite 
+        faveSong={faveSong}
+        playlist={playlist}
+      />
+      <Form 
+        song={emptySong} 
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 }
