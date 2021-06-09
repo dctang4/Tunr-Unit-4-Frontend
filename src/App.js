@@ -16,22 +16,18 @@ function App() {
     time: ''
   }
 
-  const [faveSong, setFaveSong] = useState([])
-
   const getSongs = () => {
     fetch(url)
     .then((resp) => resp.json())
     .then((data) => {
-      setPlaylist(data.body)
+      setPlaylist(data.body.sort((a, b) => {
+        return (a.song > b.song ? 1: -1)
+      }))
     })
   }
-
+  
   useEffect(() => getSongs(), [])
-  // console.log(playlist)
-
-  const addFaveSong = (song) => {
-    setFaveSong([...faveSong, song])
-  }
+  console.log('playlist', playlist)
 
   const handleSubmit = (newSong) => {
     fetch(url, {
@@ -62,7 +58,6 @@ function App() {
     .then(() => getSongs())
   }
 
-
   return (
     <div className="App">
       <h1>TUNR.</h1>
@@ -70,14 +65,10 @@ function App() {
       <hr className="red-line"></hr>
       <Playlist 
         playlist={playlist}  
-        addFaveSong={addFaveSong}
         handleFave={handleFave}
         handleDelete={handleDelete}
       />
-      <Favorite 
-        faveSong={faveSong}
-        playlist={playlist}
-      />
+      <Favorite playlist={playlist}/>
       <Form 
         song={emptySong} 
         handleSubmit={handleSubmit}

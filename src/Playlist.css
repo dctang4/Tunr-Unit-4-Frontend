@@ -3,20 +3,20 @@
 } */
 
 .playlist {
-    text-align: left;
-    font-size: 40px;
+  text-align: left;
+  font-size: 40px;
 }
 
 .song-info {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 0.13fr;
-    grid-template-rows: 1fr 20px;
-    margin: 20px 10% 20px 4%
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.13fr;
+  grid-template-rows: 1fr 20px;
+  margin: 20px 10% 20px 4%;
 }
 
 .tunr-info {
-    margin: 0;
-    letter-spacing: 2px;
+  margin: 0;
+  letter-spacing: 2px;
 }
 
 /* .left {
@@ -25,31 +25,30 @@
 } */
 
 .right {
-    text-align: right;
+  text-align: right;
 }
 
 .song {
-    color:#5C7E8C
+  color: #5c7e8c;
 }
 
-button, .delete {
-    font-size: 16px;
-    font-weight: 900;
-    margin: 0;
-    padding: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
+button,
+.delete {
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .delete {
-    font-size: 14px;
-    font-weight: 900;
-    /* background: none;
-    border: none; */
-    cursor: pointer;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 button:hover {
-    color: red
+  color: red;
 }
