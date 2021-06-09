@@ -1,0 +1,27 @@
+.add-song-header {
+  font-size: 40px;
+}
+
+.input-header {
+  margin: 5px 0;
+}
+
+input {
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  background-color: #A93F55;
+  color: white;
+  margin: 15px 0; 
+  height: 35px;
+  width: 100.6%;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}

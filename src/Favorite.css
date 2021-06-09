@@ -1,0 +1,16 @@
+.favorite-header {
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 2.5fr 2fr 0.5fr;
+}
+
+h5 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 5px 0;
+  color: #494d6d;
+}

@@ -1,0 +1,30 @@
+.App {
+  /* text-align: center; */
+  margin: 5% 4%;
+  color: rgb(80, 80, 80)
+}
+
+h1 {
+  font-size: 80px;
+  margin: 0px;
+  color: #19323d;
+  font-weight: 900;
+  text-shadow: 3px 3px #c6c7c8;
+}
+
+h3.headline {
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: right;
+  margin: 0;
+  color: #494d6d;
+}
+
+.red-line {
+  background-color: #a93f55;
+  height: 5px;
+}
+
+h2 {
+  margin: 25px 0
+}

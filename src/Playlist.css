@@ -1,0 +1,38 @@
+/* .playlist-section {
+    margin: 0 5%;
+} */
+
+.playlist {
+    text-align: left;
+    font-size: 40px;
+}
+
+.song-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 20px 4%
+}
+
+.tunr-info {
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* .left {
+    text-align: left;
+    
+} */
+
+.right {
+    text-align: right;
+    margin-right: 10%;
+}
+
+.song {
+    color:#5C7E8C
+}
+
+button {
+    margin: auto
+}
