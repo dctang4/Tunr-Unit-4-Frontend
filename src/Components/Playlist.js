@@ -8,11 +8,6 @@ const myPlaylist = (props) => {
 
   const fave = (song, event) => {
     song.favorite = !song.favorite;
-    if (song.favorite === true) {
-      event.currentTarget.style.color = 'red'
-    } else {
-      event.currentTarget.style.color = 'black'
-    }
     handleFave(song);
   };
 
@@ -20,13 +15,13 @@ const myPlaylist = (props) => {
     if (song.favorite === true) {
       return (
         <button className="fave-btn right" style={{color: 'red'}} onClick={() => fave(song)}>
-            &#9825;
+            &#9829;
         </button>
       )
     } else {
       return (
         <button className="fave-btn right" style={{color: 'black'}} onClick={() => fave(song)}>
-            &#9825;
+            &#9829;
         </button>
       )
     }

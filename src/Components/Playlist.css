@@ -23,10 +23,26 @@
   color: #5c7e8c;
 }
 
-button,
 .delete {
   font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  cursor: pointer;
+}
+
+.delete:hover {
+  font-size: 18px;
   font-weight: 900;
+}
+
+.delete:active {
+  color: #5c7e8c;
+  font-weight: 900;
+}
+
+button {
+  font-size: 22px;
+  font-weight: 500;
   margin: 0;
   padding: 0;
   background: none;
@@ -34,14 +50,7 @@ button,
   cursor: pointer;
 }
 
-button:hover,
-.delete:hover {
-  font-size: 18px;
-  font-weight: 300;
+button:hover {
+  font-size: 25px;
 }
 
-button:active,
-.delete:active {
-  color: #5c7e8c;
-  font-weight: 900;
-}
