@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Favorite from './Favorite'
-import Form from './Form'
-import Playlist from './Playlist'
+import Favorite from './Components/Favorite'
+import Form from './Components/Form'
+import Playlist from './Components/Playlist'
 
 function App() {
 

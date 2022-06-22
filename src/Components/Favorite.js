@@ -3,7 +3,7 @@ import "./Favorite.css"
 
 const Favorite = (props) => {
 
-  const {faveSong, playlist} = props
+  const {playlist} = props
 
   const faveList = playlist.filter(song => song.favorite === true)
 

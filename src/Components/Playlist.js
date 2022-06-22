@@ -6,10 +6,31 @@ import "./Playlist.css";
 const myPlaylist = (props) => {
   const { playlist, handleFave, handleDelete } = props;
 
-  const fave = (song) => {
+  const fave = (song, event) => {
     song.favorite = !song.favorite;
+    if (song.favorite === true) {
+      event.currentTarget.style.color = 'red'
+    } else {
+      event.currentTarget.style.color = 'black'
+    }
     handleFave(song);
   };
+
+  const faveBtn = (song) => {
+    if (song.favorite === true) {
+      return (
+        <button className="fave-btn right" style={{color: 'red'}} onClick={() => fave(song)}>
+            &#9825;
+        </button>
+      )
+    } else {
+      return (
+        <button className="fave-btn right" style={{color: 'black'}} onClick={() => fave(song)}>
+            &#9825;
+        </button>
+      )
+    }
+  }
 
   const loaded = () => (
     <div className="playlist-section">
@@ -27,10 +48,8 @@ const myPlaylist = (props) => {
             X
           </h4>
           <h4 className="time left tunr-info">{song.time}</h4>
-          <h4></h4>
-          <button className="fave-btn right" onClick={() => fave(song)}>
-            &#9825;
-          </button>
+          <p></p>
+          {faveBtn(song)}
         </div>
       ))}
     </div>
